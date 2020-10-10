@@ -29,8 +29,8 @@ public class RJDriver {
 
         job.setGroupingComparatorClass(RJComparator.class);
 
-        FileInputFormat.setInputPaths(job, new Path("C:\\Users\\IGARASHI\\Desktop\\MapReducer\\join\\input"));
-        FileOutputFormat.setOutputPath(job, new Path("C:\\Users\\IGARASHI\\Desktop\\MapReducer\\join\\output"));
+        FileInputFormat.setInputPaths(job, new Path("C:\\Users\\IGARASHI\\Desktop\\MapReducer\\reducejoin\\input"));
+        FileOutputFormat.setOutputPath(job, new Path("C:\\Users\\IGARASHI\\Desktop\\MapReducer\\reducejoin\\output"));
 
         boolean b = job.waitForCompletion(true);
         System.exit(b ? 0 : 1);

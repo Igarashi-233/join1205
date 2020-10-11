@@ -33,7 +33,7 @@ public class MJDriver {
             FileOutputFormat.setOutputPath(job, new Path("C:\\Users\\IGARASHI\\Desktop\\MapReducer\\mapjoin\\output"));
 
             // 6 加载缓存数据
-            job.addCacheFile(new URI("file:///C:/Users/IGARASHI/Desktop/MapReducer/mapjoin/input/pd.txt"));
+            job.addCacheFile(URI.create("file:///C:/Users/IGARASHI/Desktop/MapReducer/mapjoin/input/pd.txt"));
 
             // 7 Map端Join的逻辑不需要Reduce阶段，设置reduceTask数量为0
             job.setNumReduceTasks(0);

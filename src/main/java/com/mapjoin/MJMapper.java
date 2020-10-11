@@ -18,7 +18,7 @@ public class MJMapper extends Mapper<LongWritable, Text, Text, NullWritable> {
     Text k = new Text();
 
     @Override
-    protected void setup(Mapper<LongWritable, Text, Text, NullWritable>.Context context) throws IOException, InterruptedException {
+    protected void setup(Mapper<LongWritable, Text, Text, NullWritable>.Context context) throws IOException {
 
         // 1 获取缓存的文件
         URI[] cacheFiles = context.getCacheFiles();

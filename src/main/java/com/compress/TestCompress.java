@@ -21,7 +21,7 @@ public class TestCompress {
         CompressionCodecFactory factory = new CompressionCodecFactory(new Configuration());
         CompressionCodec codec = factory.getCodec(new Path(path));
 
-        CompressionInputStream cis = codec.createInputStream(new FileInputStream(path));
+        CompressionInputStream cis = codec.createInputStream(new FileInputStream(path ));
         FileOutputStream fos = new FileOutputStream(path.substring(0, path.length() - 4));
 
         IOUtils.copyBytes(cis, fos, 1024);

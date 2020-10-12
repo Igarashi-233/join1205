@@ -19,7 +19,7 @@ public class ETLDriver {
         //map端压缩
         /*
         configuration.set("mapreduce.map.output.compress", "true");
-        configuration.setClass("mapreduce.map.output.compress.codec", BZip2Codec.class, CompressionCodec.class);
+        configuration.setClass("mapreduce.map.output.compress.codec", BZip2Codec.class （不常用）, CompressionCodec.class);
         */
 
         Job job = Job.getInstance(configuration);
@@ -32,12 +32,15 @@ public class ETLDriver {
 
 //        job.setNumReduceTasks(0);
 
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(NullWritable.class);
+
         //reduce端压缩
         /*
         // 设置reduce端输出压缩开启
         FileOutputFormat.setCompressOutput(job, true);
         // 设置压缩的方式
-        FileOutputFormat.setOutputCompressorClass(job, BZip2Codec.class);
+        FileOutputFormat.setOutputCompressorClass(job, BZip2Codec.class （不常用）);
         */
 
 
